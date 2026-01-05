@@ -27,7 +27,7 @@ export default function Ball({ number, isMatched = false, size = 'md', className
   `;
 
   const colorClasses = isMatched
-    ? 'bg-gradient-to-br from-yellow-400 to-yellow-600 text-white animate-pulse ring-4 ring-yellow-300'
+    ? 'bg-gradient-to-br from-yellow-400 to-yellow-600 text-white animate-pulse ring-2 ring-yellow-300'
     : 'bg-gradient-to-br from-green-500 to-emerald-700 text-white';
 
   return (

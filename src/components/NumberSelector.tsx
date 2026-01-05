@@ -120,9 +120,9 @@ export default function NumberSelector({ onNumbersSelected, disabled = false }: 
               aria-pressed={isSelected}
               className={`
                 aspect-square rounded-lg font-bold text-xs sm:text-sm md:text-base transition-all
-                min-h-[40px] sm:min-h-[44px]
+                min-h-[20px] sm:min-h-[24px]
                 ${isSelected
-                  ? 'bg-gradient-to-br from-green-500 to-green-700 text-white scale-105 shadow-lg ring-2 ring-green-400 ring-offset-2'
+                  ? 'bg-gradient-to-br from-green-500 to-green-700 text-white shadow-lg ring-2 ring-green-400 ring-offset-1'
                   : 'bg-white hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 text-gray-800 border-2 border-gray-300 hover:border-green-400 shadow-md hover:shadow-lg'
                 }
                 ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer active:scale-95 hover:scale-105'}

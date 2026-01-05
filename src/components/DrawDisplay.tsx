@@ -162,55 +162,6 @@ export default function DrawDisplay({ userNumbers }: DrawDisplayProps) {
           ))}
         </div>
       </div>
-
-      {/* Match result - Prominent display */}
-      {/* <div className="text-center">
-        {currentDraw.yourMatches === 0 && (
-          <div className="bg-red-100 p-4 rounded-xl border-2 border-red-300">
-            <p className="text-red-700 text-lg md:text-xl font-bold">
-            Nenhum acerto desta vez</p>
-          </div>
-        )}
-        {currentDraw.yourMatches > 0 && currentDraw.yourMatches < 3 && (
-          <div className="bg-blue-100 p-4 rounded-xl border-2 border-blue-300">
-            <p className="text-blue-700 text-lg md:text-xl font-bold">
-              {currentDraw.yourMatches} acerto{currentDraw.yourMatches > 1 ? 's' : ''}!
-            </p>
-          </div>
-        )}
-        {currentDraw.yourMatches === 3 && (
-          <div className="bg-gradient-to-r from-yellow-100 to-yellow-200 p-5 md:p-6 rounded-2xl border-4 border-yellow-400 shadow-xl animate-pulse">
-            <p className="text-yellow-700 text-2xl md:text-3xl font-black">
-              🎉 TERNO! 🎉
-            </p>
-            <p className="text-yellow-600 text-sm md:text-base mt-1">3 acertos</p>
-          </div>
-        )}
-        {currentDraw.yourMatches === 4 && (
-          <div className="bg-gradient-to-r from-orange-100 to-orange-200 p-5 md:p-6 rounded-2xl border-4 border-orange-400 shadow-xl animate-pulse">
-            <p className="text-orange-700 text-2xl md:text-3xl font-black">
-              🎊 QUADRA! 🎊
-            </p>
-            <p className="text-orange-600 text-sm md:text-base mt-1">4 acertos</p>
-          </div>
-        )}
-        {currentDraw.yourMatches === 5 && (
-          <div className="bg-gradient-to-r from-purple-100 to-purple-200 p-6 md:p-8 rounded-2xl border-4 border-purple-500 shadow-2xl animate-bounce">
-            <p className="text-purple-700 text-3xl md:text-4xl font-black">
-              ⭐ QUINA! ⭐
-            </p>
-            <p className="text-purple-600 text-base md:text-lg mt-2">5 acertos!</p>
-          </div>
-        )}
-        {currentDraw.yourMatches === 6 && (
-          <div className="bg-gradient-to-r from-green-200 via-yellow-200 to-green-200 p-6 md:p-10 rounded-2xl border-4 border-green-500 shadow-2xl animate-bounce">
-            <p className="text-green-700 text-3xl md:text-5xl font-black">
-              🏆 SENA! 🏆
-            </p>
-            <p className="text-green-600 text-xl md:text-2xl mt-2 font-bold">VOCÊ GANHOU!</p>
-          </div>
-        )}
-      </div> */}
     </div>
   );
 }

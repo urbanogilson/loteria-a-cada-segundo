@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import NumberSelector from './NumberSelector';
 import DrawDisplay from './DrawDisplay';
 import LastDrawDisplay from './LastDrawDisplay';
-import { getStats } from '../lib/localStorage';
+import Ball from './Ball';
 
 export default function PlaySection() {
   const [userNumbers, setUserNumbers] = useState<number[] | null>(null);
@@ -112,14 +112,12 @@ export default function PlaySection() {
             </h3>
             <div className="flex gap-2 justify-center mb-4">
               {userNumbers!.map(num => {
-                const isMatching = matchingNumbers.includes(num);
                 return (
-                  <div
-                    key={num}
-                    className={`w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-700 text-white flex items-center justify-center font-bold text-sm sm:text-base md:text-lg shadow-lg flex-shrink-0 transition-all ${isMatching ? 'animate-pulse ring-4 ring-yellow-400 scale-110 bg-gradient-to-br from-yellow-400 to-yellow-600' : ''}`}
-                  >
-                    {num}
-                  </div>
+                        <Ball
+                          number={num}
+                          isMatched={matchingNumbers.includes(num)}
+                          size="md"
+                        />
                 );
               })}
             </div>
