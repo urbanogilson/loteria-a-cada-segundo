@@ -29,6 +29,24 @@ export default function DrawDisplay({ userNumbers }: DrawDisplayProps) {
   const drawCounterRef = useRef(1);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Generate unique key for current number selection
+  const getStorageKey = () => {
+    const numbersKey = userNumbers.sort((a, b) => a - b).join('-');
+    return `draw_count_${numbersKey}`;
+  };
+
+  // Load draw count from localStorage on mount or when numbers change
+  useEffect(() => {
+    const storageKey = getStorageKey();
+    const savedCount = localStorage.getItem(storageKey);
+
+    if (savedCount) {
+      drawCounterRef.current = parseInt(savedCount, 10);
+    } else {
+      drawCounterRef.current = 1;
+    }
+  }, [userNumbers]);
+
   useEffect(() => {
     const runDraw = () => {
       if (isPaused) return;
@@ -60,9 +78,15 @@ export default function DrawDisplay({ userNumbers }: DrawDisplayProps) {
           window.dispatchEvent(new CustomEvent('lottery-win', { detail: winData }));
         }
 
+        const currentDrawId = drawCounterRef.current++;
+
+        // Save draw count to localStorage
+        const storageKey = getStorageKey();
+        localStorage.setItem(storageKey, drawCounterRef.current.toString());
+
         // Update current draw display
         setCurrentDraw({
-          drawId: drawCounterRef.current++,
+          drawId: currentDrawId,
           numbers: drawnNumbers,
           timestamp: Math.floor(timestamp / 1000),
           yourMatches: matches
