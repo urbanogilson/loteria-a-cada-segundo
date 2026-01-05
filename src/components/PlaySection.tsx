@@ -110,16 +110,21 @@ export default function PlaySection() {
             <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-3 text-center">
               Seus Números
             </h3>
-            <div className="flex gap-2 justify-center mb-4">
-              {userNumbers!.map(num => {
-                return (
-                        <Ball
-                          number={num}
-                          isMatched={matchingNumbers.includes(num)}
-                          size="md"
-                        />
-                );
-              })}
+
+            <div className="flex gap-1.5 sm:gap-2 md:gap-3 mb-4 justify-center items-center">
+              {userNumbers!.map((num, index) => (
+                <div
+                  key={`${num}`}
+                  className="flex-shrink-0"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <Ball
+                    number={num}
+                    isMatched={matchingNumbers.includes(num)}
+                    size="md"
+                  />
+                </div>
+              ))}
             </div>
             <div className="text-center">
               <button
