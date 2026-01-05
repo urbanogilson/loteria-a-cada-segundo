@@ -111,7 +111,7 @@ export default function PlaySection() {
               Seus Números
             </h3>
 
-            <div className="flex gap-1.5 sm:gap-2 md:gap-3 mb-4 justify-center items-center">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 mb-4 justify-center items-center">
               {userNumbers!.map((num) => (
                 <div
                   key={num}
