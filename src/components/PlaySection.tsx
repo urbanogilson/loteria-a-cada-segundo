@@ -112,12 +112,11 @@ export default function PlaySection() {
             </h3>
 
             <div className="flex gap-1.5 sm:gap-2 md:gap-3 mb-4 justify-center items-center">
-              {userNumbers!.map((num, index) => (
+              {userNumbers!.map((num) => (
                 <div
-                  key={`${num}`}
+                  key={num}
                   className="flex-shrink-0"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
+                  >
                   <Ball
                     number={num}
                     isMatched={matchingNumbers.includes(num)}

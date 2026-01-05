@@ -20,6 +20,8 @@ export default function Ball({ number, isMatched = false, size = 'md', className
   const baseClasses = `
     rounded-full
     flex items-center justify-center
+    flex-shrink-0
+    aspect-square
     font-bold
     transition-all duration-300
     shadow-lg
@@ -27,7 +29,7 @@ export default function Ball({ number, isMatched = false, size = 'md', className
   `;
 
   const colorClasses = isMatched
-    ? 'bg-gradient-to-br from-yellow-400 to-yellow-600 text-white animate-pulse ring-2 ring-yellow-300'
+    ? 'bg-gradient-to-br from-yellow-400 to-yellow-600 text-white animate-pulse transform-gpu ring-2 ring-yellow-300'
     : 'bg-gradient-to-br from-green-500 to-emerald-700 text-white';
 
   return (
